@@ -1,0 +1,160 @@
+@import 'tailwindcss';
+
+/* ===== NETPREP DESIGN SYSTEM ===== */
+/* Signature Coral Orange + Warm Slate Light Theme */
+
+@theme {
+  --color-primary: #F97316;
+  --color-primary-dark: #EA580C;
+  --color-primary-light: #FDBA74;
+  --color-primary-50: #FFF7ED;
+  --color-primary-100: #FFEDD5;
+  --color-primary-200: #FED7AA;
+  --color-accent: #F59E0B;
+  --color-surface: #FFF8F0;
+  --color-surface-alt: #FFFBF5;
+  --color-card: #FFFFFF;
+  --color-card-hover: #FFFAF5;
+  --color-text: #292524;
+  --color-text-muted: #78716C;
+  --color-text-light: #A8A29E;
+  --color-border: #E7E5E4;
+  --color-border-light: #F5F5F4;
+  --color-code-bg: #0B0F19;
+  --color-code-header: #111625;
+  --color-success: #22C55E;
+  --color-danger: #EF4444;
+  --color-info: #3B82F6;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+/* ========================================================================= */
+/* TOPIC 20: CUSTOM THIN THEME SCROLLBARS                                    */
+/* ========================================================================= */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FDBA74 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #FDBA74;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #F97316;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-dark);
+}
+
+/* ========================================================================= */
+/* TOPIC 3: OPTIMAL READING MEASURE & PROSE TYPOGRAPHY                      */
+/* ========================================================================= */
+.prose-netprep {
+  max-width: 72ch; /* Optimal typographic line length */
+}
+
+.prose-netprep h1,
+.prose-netprep h2,
+.prose-netprep h3,
+.prose-netprep h4 {
+  color: var(--color-text);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.prose-netprep p {
+  line-height: 1.85;
+  color: #383432;
+  margin-bottom: 1.5rem;
+}
+
+.prose-netprep ul, .prose-netprep ol {
+  padding-left: 1.5rem;
+}
+
+.prose-netprep li {
+  line-height: 1.8;
+  margin-bottom: 0.6rem;
+  color: #383432;
+}
+
+.prose-netprep strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/* Inline code */
+.prose-netprep code:not(pre code) {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-dark);
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.375rem;
+  font-size: 0.875em;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  border: 1px solid var(--color-primary-100);
+}
+
+/* ========================================================================= */
+/* TOPIC 10: HORIZONTAL SCROLL FADE SHADOW CUES                             */
+/* ========================================================================= */
+.table-scroll-container {
+  position: relative;
+}
+
+.table-scroll-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(0,0,0,0.06), transparent);
+}
+
+/* ========================================================================= */
+/* TOPIC 15: TACTILE KEYBOARD KEYCAPS                                        */
+/* ========================================================================= */
+kbd {
+  display: inline-block;
+  padding: 0.15rem 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  box-shadow: 0 2px 0 var(--color-border), 0 3px 1px rgba(0, 0, 0, 0.05);
+  user-select: none;
+}
