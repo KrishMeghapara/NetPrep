@@ -131,10 +131,10 @@ NetPrep consolidates comprehensive theoretical concepts, production runtime blue
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/KrishMeghapara/DotPrep.git
+git clone https://github.com/KrishMeghapara/NetPrep.git
 
 # Navigate into the project folder
-cd DotPrep
+cd NetPrep
 
 # Install dependencies
 npm install
